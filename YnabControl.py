@@ -47,7 +47,7 @@ class YnabControl:
 
 	def open_account(self, account):
 		wait = WebDriverWait(self.b,30)
-		e = wait.until(EC.presence_of_element_located( (By.CSS_SELECTOR, 'div.nav-account-name[title="'+account.replace('"', '\\"')+'"] button')  ))
+		e = wait.until(EC.presence_of_element_located( (By.CSS_SELECTOR, 'div.nav-account-name[title="'+account.replace('"', '\\"')+'"] div.nav-account-name-val')  ))
 		e.click()
 		wait.until(EC.presence_of_element_located( (By.CSS_SELECTOR, 'div.accounts-header-total-inner-label[title="'+account.replace('"', '\\"')+'"]')  ))
 
